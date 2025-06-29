@@ -1,0 +1,115 @@
+:root {
+  --bg-light: #f9f9f9;
+  --bg-dark: #1e1e1e;
+  --text-light: #1e1e1e;
+  --text-dark: #f9f9f9;
+  --primary-color: #800000;
+}
+
+[data-theme="light"] {
+  --bg: var(--bg-light);
+  --text: var(--text-light);
+}
+
+[data-theme="dark"] {
+  --bg: var(--bg-dark);
+  --text: var(--text-dark);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: justify;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+.header {
+  display: flex;
+  height: 300px;
+  background: url('https://i.imgur.com/ZcH0gi2.png') center/cover no-repeat;
+  position: relative;
+  color: white;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.header-content {
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem 2rem;
+  width: 100%;
+  z-index: 2;
+  position: relative;
+}
+
+.header img {
+  width: auto;
+  height: 200px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border: 4px solid white;
+  border-radius: 10px;
+  margin-right: 1.5rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  align-self: flex-end;
+}
+
+.header h3 {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+
+nav {
+  background-color: #800000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+main {
+  padding: 2rem;
+  transition: opacity 0.5s ease;
+}
